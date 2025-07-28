@@ -46,5 +46,17 @@ This project extracts a *document title* and a flat list of headings (H1, H2, H3
 ---
 
 ## 🐳 Run with Docker
+  # Build the Docker image
+docker build -t pdf-extractor .
+
+# Run the container
+docker run -v "$(pwd)/input:/app/input" -v "$(pwd)/output:/app/output" pdf-extractor
 
 ### 📁 Folder Structure
+  project-root/
+├── Dockerfile
+├── extractor.py
+├── input/
+│ └── pages50.pdf,other.pdfs
+├── output/
+│ └── pages50.json ← will be created
